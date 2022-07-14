@@ -1,0 +1,15 @@
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& v, int x) {
+        vector<bool>a;
+        int mx=0;
+        for(auto t:v) mx=max(t,mx);
+        for(auto t:v)
+        {
+            if(t+x>=mx) a.push_back(true);
+            else a.push_back(false);
+        }
+       
+        return a;
+    }
+};
