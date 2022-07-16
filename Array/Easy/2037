@@ -1,0 +1,11 @@
+class Solution {
+public:
+    int minMovesToSeat(vector<int>& x, vector<int>& y) {
+        sort(x.begin(),x.end());
+        sort(y.begin(),y.end());
+        int ans=0;
+        for(int i=0;i<x.size();i++) ans+=abs(x[i]-y[i]);
+        return ans;
+        
+    }
+};
