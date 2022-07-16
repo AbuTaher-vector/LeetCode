@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int countKDifference(vector<int>& nums, int k) {
+        map<int,int>mp;
+        for(auto x:nums) mp[x]++;
+        vector<pair<int,int>>p(mp.begin(),mp.end());
+        int ans=0;
+        for(int i=0;i<p.size()-1;i++)
+        {
+            for(int j=i+1;j<p.size();j++)
+            {
+                if(p[j].first-p[i].first>k) break;
+                if(p[j].first-p[i].first==k) ans+=(p[j].second*p[i].second);
+            }
+        }
+        return ans;
+        
+    }
+};
