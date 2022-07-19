@@ -1,0 +1,16 @@
+class Solution {
+public:
+    
+    int root(int n)
+    {
+        if(n<=3 || n%3!=0) return n;
+        int ans=root(n/3);
+        return min(ans,n);
+    }
+    bool isPowerOfThree(int n) {
+        int x=root(n);
+        if(x==3 || x==1) return true;
+        else return false;
+        
+    }
+};
