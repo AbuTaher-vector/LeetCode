@@ -1,0 +1,25 @@
+class Solution {
+public:
+    string decodeMessage(string key, string message) {
+        map<char,char>mp;
+        char q='a';
+        string ans;
+        for(auto x:key)
+        {
+            if(mp.find(x)==mp.end() && x!=' ')
+            {
+                mp[x]=q;
+                q++;
+                
+            }
+        }
+        for(auto x:message)
+        {
+            if(x==' ') ans+=" ";
+            else ans+=mp[x];
+        }
+        return ans;
+        
+        
+    }
+};
