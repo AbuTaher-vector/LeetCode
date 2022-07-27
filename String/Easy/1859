@@ -1,0 +1,28 @@
+class Solution {
+public:
+    string sortSentence(string s) {
+        map<int,string>mp;
+        s+=" ";
+        string x,ans;
+        for(int i=0;i<s.size();i++)
+        {
+            if(s[i]!=' ') x.push_back(s[i]);
+            else
+            {   
+                int a=x.back()-'0';
+                x.pop_back();
+                mp[a]=x;
+                x.clear();
+            }
+            
+        }
+        for(auto x:mp)
+        {
+            ans+=x.second;
+            ans+=" ";
+        }
+        ans.pop_back();
+        return ans;
+        
+    }
+};
