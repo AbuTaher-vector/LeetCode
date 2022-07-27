@@ -1,0 +1,26 @@
+class Solution {
+public:
+    int countPoints(string rings) {
+         vector<char>v[10];
+         for(int i=1;i<rings.size();i+=2)
+         {
+             int x=rings[i]-'0';
+             v[x].push_back(rings[i-1]);
+         }
+        int ans=0;
+         for(int i=0;i<10;i++)
+         {
+             int a=0,b=0,c=0;
+             for(int j=0;j<v[i].size();j++)
+             {
+                 if(v[i][j]=='B') a++;
+                 if(v[i][j]=='G') b++;
+                 if(v[i][j]=='R') c++;
+              }
+             if(a && b && c) ans++;
+          }
+        return ans;
+         
+        
+    }
+};
