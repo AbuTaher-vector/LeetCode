@@ -1,0 +1,11 @@
+class Solution {
+public:
+    bool checkIfPangram(string sentence) {
+       vector<int>v(26,false);
+        for(auto x:sentence)  v[x-'a']=true;
+        for(auto x:v) if(x==false) return false;
+        
+        return true;
+        
+    }
+};
